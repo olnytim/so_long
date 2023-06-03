@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 23:36:26 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/01/27 21:45:00 by tgalyaut         ###   ########.fr       */
+/*   Created: 2023/01/28 17:34:33 by tgalyaut          #+#    #+#             */
+/*   Updated: 2023/06/02 21:37:05 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	while (n-- > 0)
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		else if (!*s1++ || !*s2++)
-			return (0);
-	}
-	return (0);
+	char	*substring;
+
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	substring = (char *)malloc((len + 1) * sizeof(char));
+	if (!substring)
+		return (NULL);
+	ft_strlcpy(substring, s + start, len + 1);
+	return (substring);
 }

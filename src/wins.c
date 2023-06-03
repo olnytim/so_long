@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   wins.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 17:14:12 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/01/20 21:48:00 by tgalyaut         ###   ########.fr       */
+/*   Created: 2023/05/30 21:40:33 by tgalyaut          #+#    #+#             */
+/*   Updated: 2023/06/03 19:16:12 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_isalnum(char c)
+void	ft_wins(t_game *game)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	if (game->map->map[game->p_y][game->p_x] == 'E')
+	{
+		ft_printf("You win!\n");
+		ft_printf("You collected %d meat\n", game->collected);
+		ft_printf("You made %d moves\n", game->counter);
+		exit(0);
+	}
 }

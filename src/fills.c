@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                    *._           _.*   @   */
-/*   fills.c                                            |\  \\_//  /|     #   */
-/*                                                      \/         \/     $   */
-/*   By: olnytim <yearagotomorrow@gmail.com>           _|_    V  V  |_    %   */
-/*                                                  *=.    =  _*  =   .=* ^   */
-/*   Created: 2023/05/21 15:27:46 by olnytim           \= ___________=/   &   */
-/*   Updated: 2023/05/29 01:09:44 by olnytim                /     \       *   */
+/*                                                        :::      ::::::::   */
+/*   fills.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/21 15:27:46 by olnytim           #+#    #+#             */
+/*   Updated: 2023/06/03 19:15:44 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	ft_fills_2(t_game *game)
 	game->ph->background = mlx_xpm_file_to_image(game->mlx,
 			"phs/floor.xpm", &img_width, &img_height);
 	game->ph->look_right = mlx_xpm_file_to_image(game->mlx,
-			"phs/player_right.xpm", &img_width, &img_height);
+			"phs/luffy_right.xpm", &img_width, &img_height);
 	game->ph->look_left = mlx_xpm_file_to_image(game->mlx,
-			"phs/player_left.xpm", &img_width, &img_height);
+			"phs/luffy_left.xpm", &img_width, &img_height);
 }
 
 void	ft_put_ph(t_game *game, char *path)
@@ -52,8 +52,8 @@ void	ft_put_ph(t_game *game, char *path)
 
 void	ft_put_pl(t_game *game)
 {
-	game->player_x = game->map->cols;
-	game->player_y = game->map->rows;
+	game->p_x = game->map->cols;
+	game->p_y = game->map->rows;
 	mlx_put_image_to_window(game->mlx, game->window, game->ph->look_right,
-		game->player_x * X_SCALE, game->player_y * Y_SCALE);
+		game->p_x * X_SCALE, game->p_y * Y_SCALE);
 }

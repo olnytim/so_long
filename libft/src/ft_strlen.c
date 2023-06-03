@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 19:45:04 by tgalyaut          #+#    #+#             */
-/*   Updated: 2023/05/09 19:50:46 by tgalyaut         ###   ########.fr       */
+/*   Created: 2023/01/16 17:58:03 by tgalyaut          #+#    #+#             */
+/*   Updated: 2023/06/02 21:36:06 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(char *str1, char *str2)
+size_t	ft_strlen(const char *str)
 {
-	while (*str1 && *str2 && str1 == str2)
-	{
-		++str1;
-		++str2;
-	}
-	return (*str1 - *str2);
+	size_t	integer;
+
+	integer = 0;
+	while (str[integer])
+		++integer;
+	return (integer);
 }

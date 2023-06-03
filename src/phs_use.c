@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                    *._           _.*   @   */
-/*   phs_use.c                                          |\  \\_//  /|     #   */
-/*                                                      \/         \/     $   */
-/*   By: olnytim <yearagotomorrow@gmail.com>           _|_    V  V  |_    %   */
-/*                                                  *=.    =  _*  =   .=* ^   */
-/*   Created: 2023/05/22 02:02:04 by olnytim           \= ___________=/   &   */
-/*   Updated: 2023/05/22 02:02:05 by olnytim                /     \       *   */
+/*                                                        :::      ::::::::   */
+/*   phs_use.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/22 02:02:04 by olnytim           #+#    #+#             */
+/*   Updated: 2023/06/03 19:16:03 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	ft_creation(t_game *game)
 			else if (game->map->map[game->map->rows][game->map->cols] == '1')
 				ft_put_ph(game, "phs/walls.xpm");
 			else if (game->map->map[game->map->rows][game->map->cols] == 'C')
-				ft_put_ph(game, "phs/bonefire.xpm");
+				ft_put_ph(game, "phs/meat.xpm");
 			else if (game->map->map[game->map->rows][game->map->cols] == 'E')
-				ft_put_ph(game, "phs/exit.xpm");
+				ft_put_ph(game, "phs/onepiece.xpm");
 			game->map->cols++;
 		}
 		game->map->rows++;

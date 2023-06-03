@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                    *._           _.*   @   */
-/*   utils.c                                            |\  \\_//  /|     #   */
-/*                                                      \/         \/     $   */
-/*   By: olnytim <yearagotomorrow@gmail.com>           _|_    V  V  |_    %   */
-/*                                                  *=.    =  _*  =   .=* ^   */
-/*   Created: 2023/05/16 05:03:42 by olnytim           \= ___________=/   &   */
-/*   Updated: 2023/05/16 06:11:39 by olnytim                /     \       *   */
+/*                                                        :::      ::::::::   */
+/*   sizes.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgalyaut <tgalyaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/16 05:03:42 by olnytim           #+#    #+#             */
+/*   Updated: 2023/06/03 19:16:06 by tgalyaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ static int	ft_char_counter(int fd)
 
 	counter = 0;
 	str = get_next_line(fd);
-	while (str[counter] != '\n')
+	if (!str)
+		ft_error_log("Empty file\n");
+	while (str[counter] != '\n' && str[counter])
 		++counter;
 	return (counter);
 }
@@ -61,11 +63,13 @@ static int	ft_rows_counter(int fd, size_t length)
 void	ft_sizes(t_game *game, char **av)
 {
 	int	fd;
+	char	*temp;
 
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
 		ft_error_log("Wrong file\nTry to use correct file\n");
-	if (ft_strncmp(ft_strrchr(av[1], '.'), ".ber", 5) != 0)
+	temp = ft_strrchr(av[1], '.');
+	if (!temp || ft_strncmp(temp, ".ber", 5) != 0)
 		ft_error_log("Try to use file with '.ber' ending\n");
 	game->size_x = ft_char_counter(fd) * X_SCALE;
 	game->size_y = ft_rows_counter(fd, game->size_x) * Y_SCALE;
