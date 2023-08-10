@@ -1,6 +1,6 @@
 # :joystick: so_long Project - 42 School
 
-![Game Screenshot](screenshot.png)
+![Game Screenshot]()
 
 ## :book: Description
 
