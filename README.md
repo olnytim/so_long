@@ -19,7 +19,7 @@ Welcome to the "so_long" project! This project is part of the curriculum at 42 S
 1. Clone this repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/so_long.git
+   git clone https://github.com/olnytim/so_long.git
    ```
 
 2. Navigate to the project directory:
