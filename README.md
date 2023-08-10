@@ -1,4 +1,3 @@
-```markdown
 # :joystick: so_long Project - 42 School
 
 ![Game Screenshot](screenshot.png)
@@ -65,4 +64,3 @@ Contributions are welcome! If you encounter issues or have suggestions for impro
 ## :page_with_curl: License
 
 This project is licensed under the [MIT License](LICENSE).
-```
