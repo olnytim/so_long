@@ -60,7 +60,3 @@ Check out the sample map files in the `maps` directory. Each map is represented 
 ## :muscle: Contributing
 
 Contributions are welcome! If you encounter issues or have suggestions for improvements, feel free to create a pull request.
-
-## :page_with_curl: License
-
-This project is licensed under the [MIT License](LICENSE).
